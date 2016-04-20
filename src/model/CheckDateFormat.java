@@ -19,22 +19,22 @@ public class CheckDateFormat {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void regexParse(String st) throws BadDateFormatException {
-		String toTest="[01][0-9]§[12][089][0-9]{2}£[0-3][0-9]";
+	public static void regexParse(String st) throws BadDateFormatException {
+		String toTest="[01][0-9]ï¿½[12][089][0-9]{2}ï¿½[0-3][0-9]";
 		Pattern patDate = Pattern.compile(toTest);
 		if (!patDate.matcher(st).matches()) {
 			throw new BadDateFormatException();
 		}
 	}
 
-	public Date buildDate(String st) throws BadDateFormatException, BadDateException	{
+	public static Date buildDate(String st) throws BadDateFormatException, BadDateException	{
 		try {
-			this.regexParse(st);
+			regexParse(st);
 		} catch (BadDateFormatException e) {
 			throw e;
 		}
 		
-		String format = "MM§YYYY£dd";
+		String format = "MMï¿½YYYYï¿½dd";
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		sdf.setLenient(false);
 		
