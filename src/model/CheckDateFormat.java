@@ -20,7 +20,7 @@ public class CheckDateFormat {
 	}
 	
 	public static void regexParse(String st) throws BadDateFormatException {
-		String toTest="[01][0-9]�[12][089][0-9]{2}�[0-3][0-9]";
+		String toTest="[01][0-9]§[12][089][0-9]{2}£[0-3][0-9]";
 		Pattern patDate = Pattern.compile(toTest);
 		if (!patDate.matcher(st).matches()) {
 			throw new BadDateFormatException();
@@ -34,7 +34,7 @@ public class CheckDateFormat {
 			throw e;
 		}
 		
-		String format = "MM�YYYY�dd";
+		String format = "MM§YYYY£dd";
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		sdf.setLenient(false);
 		

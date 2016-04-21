@@ -12,7 +12,7 @@ public class Main {
 		try {
 			my.scanDate();
 		} catch (BadDateFormatException e) {
-			System.err.println("Mauvais format de date: MM[par]YYYY£dd");
+			System.err.println("Mauvais format de date: MM§YYYY£dd");
 		} catch (BadDateException f) {
 			System.err.println("LA date n'existe pas dans le calendrier");
 			// TODO: handle exception

@@ -24,23 +24,20 @@ public class InteractiveDateEnter {
 	
 	public void scanDate() throws BadDateFormatException, BadDateException {
 		Scanner scan = new Scanner(System.in);
-		scan.useDelimiter("//");
+		//scan.useDelimiter("//");
 		Date essai = null;
-		while (scan.hasNext()) {
+		String control = "";
+		while (!control.equals("fin")) {
 			try{        
 				essai = CheckDateFormat.buildDate(scan.next());
 			} catch (BadDateFormatException e) {
-				throw e;
+				throw new BadDateFormatException(essai.toString(),e);
 			} catch (BadDateException f) {
 				throw f;
 			}
 			dates.add(essai);
-			
-		scan.close();
-			
-			
 		}
-		
+		scan.close();
 	}
 	
 
